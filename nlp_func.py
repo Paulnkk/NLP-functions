@@ -22,6 +22,9 @@ from nltk.util import ngrams
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+import matplotlib.colors as mcolors
+from wordcloud import WordCloud
+
 def split_city(df):    
     # filter by city
     nyc_df = df[df['SYSTEM_IDENTIFIER'] == 'newyork'] 
