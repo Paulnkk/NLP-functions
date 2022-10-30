@@ -19,7 +19,6 @@ from nltk.stem import WordNetLemmatizer
 from nltk.stem.porter import *
 from nltk.util import ngrams
 import matplotlib.pyplot as plt
-import seaborn as sns
 
 import matplotlib.colors as mcolors
 from wordcloud import WordCloud
