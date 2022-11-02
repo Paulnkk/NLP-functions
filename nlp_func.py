@@ -380,10 +380,12 @@ def run_lda(df, col, n):
 
 # Create word cloud for genism lda model
 # define stopwords from library
+# standardized format for visuals
+# more colors: 'mcolors.XKCD_COLORS'
 def viz_word_cloud(lda_model):
     stop_words = list(stopwords.words('english'))
 
-    cols = [color for name, color in mcolors.TABLEAU_COLORS.items()]  # more colors: 'mcolors.XKCD_COLORS'
+    cols = [color for name, color in mcolors.TABLEAU_COLORS.items()]  
     
     # generate Wordcloud objects 
     cloud = WordCloud(stopwords=stop_words,
