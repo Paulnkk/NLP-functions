@@ -9,7 +9,6 @@ from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 
-import matplotlib.pyplot as plt
 import seaborn as sns
 
 import gensim
