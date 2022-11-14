@@ -417,3 +417,40 @@ def viz_word_cloud(lda_model):
     plt.show()
     
     return None
+
+# define function to get words in topics
+def get_topics_lists(model, top_clusters, n_words):
+    '''
+    Gets lists of words in topics as a list of lists.
+    
+    model: gsdmm instance
+    top_clusters:  numpy array containing indices of top_clusters
+    n_words: top n number of words to include
+    
+    '''
+    # create empty list to contain topics
+    topics = []
+    
+    # iterate over top n clusters
+    for cluster in top_clusters:
+        #create sorted dictionary of word distributions
+        sorted_dict = sorted(model.cluster_word_distribution[cluster].items(), key=lambda k: k[1], reverse=True)[:n_words]
+         
+        #create empty list to contain words
+        topic = []
+        
+        #iterate over top n words in topic
+        for k,v in sorted_dict:
+            #append words to topic list
+            topic.append(k)
+            
+        #append topics to topics list    
+        topics.append(topic)
+    
+    return topics
+
+# define function to get top words per topic
+def top_words(cluster_word_distribution, top_cluster, values):
+    for cluster in top_cluster:
+        sort_dicts = sorted(cluster_word_distribution[cluster].items(), key=lambda k: k[1], reverse=True)[:values]
+        print("\nCluster %s : %s"%(cluster, sort_dicts))
