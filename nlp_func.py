@@ -448,9 +448,3 @@ def get_topics_lists(model, top_clusters, n_words):
         topics.append(topic)
     
     return topics
-
-# define function to get top words per topic
-def top_words(cluster_word_distribution, top_cluster, values):
-    for cluster in top_cluster:
-        sort_dicts = sorted(cluster_word_distribution[cluster].items(), key=lambda k: k[1], reverse=True)[:values]
-        print("\nCluster %s : %s"%(cluster, sort_dicts))
